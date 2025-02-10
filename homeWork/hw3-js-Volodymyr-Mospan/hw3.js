@@ -20,7 +20,7 @@ const flipCount = 1;
 const ingredientList = ["борошно", "молоко", "яйця", "цукор", "сіль"];
 const batterVolume = { ml: 500 };
 const servingSize = "2 млинці";
-const toppingChoice = "варення";
+const toppingChoice = null;
 const remainingBatter = { ml: 100 };
 const patelniaOilLevel = { tablespoon: 1 };
 
