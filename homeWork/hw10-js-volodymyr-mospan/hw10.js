@@ -63,10 +63,15 @@ const maxNum = 10;
 const wantedNumber = 8;
 
 /**
- * @type {number} randomNum - Змінна для збереження поточного випадкового числа.
- * @type {number} counterOfRandomNum - Лічильник спроб генерації числа.
+ * Змінна для збереження поточного випадкового числа.
+ * @type {number}
  */
 let randomNum;
+
+/**
+ * Лічильник спроб генерації числа.
+ * @type {number}
+ */
 let counterOfRandomNum = 0;
 
 /**
