@@ -19,14 +19,34 @@
 // Користувач вводить операцію: *.
 // Програма виводить: Результат: 15.
 
+/**
+ * Функція запускає простий калькулятор запитуючи у користувача два числа та
+ * математичну дію, а потім повертає результат
+ *
+ * @returns {number|string} Результат обчислення або повідомлення про помилку ()
+ */
+
 function calc() {
+  /**
+   * Рекурсивно запитує у користувача число до тих пір, поки не буде введено коректне число.
+   *
+   * @param {string} message Повідомлення, яке показується користувачу для введення числа.
+   * @returns {number} Коректне число, введене користувачем.
+   */
   function getNum(message) {
-    const num = Number(prompt(message));
-    return num
+    const input = prompt(message);
+    const num = Number(input === null || input === "" ? NaN : input);
+    return !isNaN(num)
       ? num
       : getNum("Ви ввели неправильне число, Будь ласка, введіть число ще раз");
   }
 
+  /**
+   * Рекурсивно запитує у користувача дію (оператор) до тих пір, поки не буде введено коректний оператор.
+   *
+   * @param {string} message Повідомлення, яке показується користувачу для введення дії.
+   * @returns {string} Оператор математичної дії (+, -, *, /).
+   */
   function getAvtion(message) {
     const actionArray = ["+", "-", "*", "/"];
     const act = prompt(message);
@@ -37,8 +57,8 @@ function calc() {
   }
 
   const num1 = getNum("Введіть перше число");
+  const action = getAvtion("Ведіть один з симлолів математичної дії ( + - / *");
   const num2 = getNum("Введіть друге число");
-  const action = getAvtion("Ведіть один з симлолів дії ( + - / *");
 
   switch (action) {
     case "+":
