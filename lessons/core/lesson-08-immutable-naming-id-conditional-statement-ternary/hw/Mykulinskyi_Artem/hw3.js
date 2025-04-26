@@ -1,0 +1,10 @@
+const  batterConsistency = "Готове";
+const  patelniaTemperature = 210;
+const  cookingTime = 2.5;
+const  flipCount = 2;
+const  ingredientList =[Мука, Вода, Сіль, Дріжджі];
+const  batterVolume = 700;
+const  servingSize = null;
+const  toppingChoice = undefined;
+const  remainingBatter = false;
+const  patelniaOilLevel = "15%";

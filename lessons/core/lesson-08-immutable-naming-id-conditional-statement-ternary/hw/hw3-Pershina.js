@@ -1,0 +1,10 @@
+let batterConsistency = "м'яке";
+let patelniaTemperature = 180;
+const cookingTime = 20;
+let flipCount = 2;
+const ingredientList = [борошно, цукор, молоко, олія];
+let batterVolume = 1.5;
+let servingSize = undefined;
+let toppingChoice = true;
+let remainingBatter = null;
+let patelniaOilLevel = 0.00225;

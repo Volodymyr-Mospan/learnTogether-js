@@ -1,0 +1,24 @@
+Що поверне String(undefined) в JavaScript?
+a) "null"
+b) "undefined"
+c) ""
+d) undefined
+
+
+Який метод String в JavaScript повертає новий рядок з великими літерами?
+a) toUpperCase()
+b) lowerCase()
+c) capsLock()
+d) capitalize()
+
+Що поверне наступний вираз: "CuteCat".split("")?
+a) ["CuteCat"]
+b) ["C", "u", "t", "e", "C", "a", "t"]
+c) ["Cute", "Cat"]
+d) Помилка
+
+Що поверне наступний вираз: "CuteCat".indexOf("Cat")?
+a) -1
+b) 0
+c) 4
+d) 5
