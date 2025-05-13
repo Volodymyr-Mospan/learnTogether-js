@@ -1,0 +1,61 @@
+/* Скидаємо стилі для всіх елементів */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Стандартні стилі для body */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Скидаємо стилі для заголовків */
+h1, h2, h3, h4, h5, h6 {
+    font-size: 100%;
+    font-weight: inherit;
+    margin: 0;
+}
+
+/* Скидаємо стилі для списків */
+ul, ol {
+    list-style: none;
+}
+
+/* Скидаємо стилі для посилань */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Скидаємо стилі для таблиць */
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+}
+
+/* Відключаємо фокус для елементів input, textarea тощо */
+input, textarea, select {
+    background: transparent;
+    border: none;
+    outline: none;
+    font: inherit;
+}
+
+/* Відключаємо фокус на кнопках */
+button {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font: inherit;
+}
