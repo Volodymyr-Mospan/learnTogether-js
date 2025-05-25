@@ -1,4 +1,4 @@
-export default function themeToggle(vars, fill) {
+export default function themeToggle({ vars, fill }) {
   const styles = document.documentElement.style;
   const path = document.querySelector("svg path");
 
