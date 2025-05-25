@@ -3,12 +3,9 @@
   --text-color: #5e607a;
   --primary-dark: #00001a;
   --highlight-color: #e9aa52;
-  --secondary-text-color: #C5C6CE;
+  --secondary-text-color: #c5c6ce;
   --bg-btn-color: #f15d51;
-  
 }
-
-
 
 * {
   box-sizing: border-box;
@@ -28,7 +25,7 @@ a {
 body {
   background: var(--background-color);
   color: var(--text-color);
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   padding: 35px 0 60px;
   font-style: normal;
   font-weight: 400;
