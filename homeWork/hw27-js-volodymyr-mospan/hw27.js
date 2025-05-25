@@ -8,7 +8,7 @@ const tam1 = new Tamagochi({
   satietyValue: 5,
 });
 const tam2 = new Tamagochi({
-  name: "Kuma",
+  name: "Kuka",
   ageDays: 2,
   healthValue: 2,
   happinessValue: 2,
