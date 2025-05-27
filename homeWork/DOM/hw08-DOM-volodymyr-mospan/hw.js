@@ -45,4 +45,3 @@ function articleMarkUp(arr) {
 }
 
 bodyRef.insertAdjacentHTML("beforeend", articleMarkUp(contentArray));
-// display: flex; flex-direction: column
