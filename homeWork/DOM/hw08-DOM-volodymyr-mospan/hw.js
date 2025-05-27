@@ -8,7 +8,7 @@ const contentArray = [
   {
     title: "Манго",
     text: "Манго багате на вітамін C та антиоксиданти, корисне для імунітету.",
-    imagePath: "./images/mango.jpg",
+    imagePath: "./images/mango.webp",
     altText: "Зображення манго",
   },
   {
@@ -20,10 +20,29 @@ const contentArray = [
   {
     title: "Лічі",
     text: "Лічі містить багато вітаміну В, корисне для нервової системи.",
-    imagePath: "./images/lychee.jpg",
+    imagePath: "./images/lychee.webp",
     altText: "Зображення лічі",
   },
   // додайте більше об'єктів за бажанням
 ];
 
 const bodyRef = document.querySelector("body");
+
+function articleMarkUp(arr) {
+  let murkup = "";
+
+  contentArray.forEach(({ title, text, imagePath, altText }) => {
+    murkup += `
+    <article style="text-align: center; margin: 14px; border: solid, 2px, black; border-radius: 8px">
+      <h3>${title}</h3>
+      <img src="${imagePath}" alt="${altText}" width="400"/>
+      <p>${text}</p>
+    </article>
+  `;
+  });
+
+  return murkup;
+}
+
+bodyRef.insertAdjacentHTML("beforeend", articleMarkUp(contentArray));
+// display: flex; flex-direction: column
