@@ -1,17 +1,22 @@
 .box {
   display: flex;
-  flex-wrap: wrap;
 
-  margin-left: auto;
-  margin-right: auto;
-
-  width: 270px;
-  height: 270px;
-  border: solid, 2px, red;
+  margin: 50px 50px 50px 50px;
 }
 
 .content {
+  width: 270px;
+  margin: 0 auto;
+  border: solid, 2px, red;
+}
+
+.item {
+  display: inline-block;
   width: 88px;
   height: 88px;
   border: solid, 1px, rgb(4, 255, 0);
+
+  font-size: 30px;
+  text-align: center;
+  vertical-align: middle;
 }
