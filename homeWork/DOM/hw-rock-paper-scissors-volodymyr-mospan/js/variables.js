@@ -13,4 +13,4 @@ const cX = width / 2;
 const cY = cX;
 const R = width / 2 - 48;
 
-export { icons, cX, cY, R };
+export { icons, cX, cY, R, container };
