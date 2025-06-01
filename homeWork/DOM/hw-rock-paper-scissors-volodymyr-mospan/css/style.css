@@ -23,6 +23,10 @@ img {
   height: auto;
 }
 
+button {
+  cursor: pointer;
+}
+
 body {
   background: radial-gradient(
     134.34% 134.34% at 50% 0%,
@@ -82,11 +86,19 @@ body {
   width: 312px;
   height: 305px;
 
+  text-align: center;
+
   /* border: 1px solid #ccc; */
   background-image: url(../images/bg-pentagon.svg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: 75%;
+}
+
+.container-result {
+  display: flex;
+  gap: 50px;
+  background-image: none;
 }
 
 .circle {
@@ -103,6 +115,32 @@ body {
 .circle img {
   width: 40px;
   height: 40px;
+}
+
+.circle-result {
+  position: relative;
+  width: 130px;
+  height: 130px;
+  margin-bottom: 22px;
+}
+
+.circle-result img {
+  width: 63px;
+  height: 63px;
+}
+
+.description {
+  font-family: "Barlow Semi Condensed";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 32px;
+  text-align: center;
+  letter-spacing: 1.875px;
+
+  color: #ffffff;
+
+  text-shadow: 0px 3px 3px rgba(0, 0, 0, 0.196706);
 }
 
 .scissors {
@@ -126,6 +164,23 @@ body {
   box-shadow: 0 4px 0 #2d8dab;
 }
 
-button {
-  cursor: pointer;
+.scissors-result {
+  border: 15px solid orange;
+  box-shadow: 0 6px 0 #c76c1b;
+}
+.paper-result {
+  border: 15px solid #29a8ff;
+  box-shadow: 0 6px 0 #2a45c2;
+}
+.rock-result {
+  border: 15px solid #e74c3c;
+  box-shadow: 0 6px 0 #9d1634;
+}
+.lizard-result {
+  border: 15px solid #9b59b6;
+  box-shadow: 0 6px 0 #5f37a8;
+}
+.spock-result {
+  border: 15px solid #3fb7cd;
+  box-shadow: 0 6px 0 #2d8dab;
 }

@@ -1,10 +1,10 @@
 import { RULES } from "./js/rules.js";
-import { startMarkup } from "./js/markup.js";
-import { container, icons } from "./js/variables.js";
+import { icons, iconsKeys, cX, cY, R, container } from "./js/variables.js";
+import { startMarkup, resultMarkup } from "./js/markup.js";
 
-const choises = { p1: "", p2: "" };
+const choised = { p1: "", p2: "" };
 
-container.insertAdjacentHTML("beforeend", startMarkup);
+container.innerHTML = startMarkup({ icons, cX, cY, R, iconsKeys });
 
 container.addEventListener("click", onClick);
 function onClick(e) {
@@ -13,14 +13,17 @@ function onClick(e) {
     return;
   }
 
-  choises.p1 = playerChoice;
-  choises.p2 = pcChoosing(playerChoice);
+  choised.p1 = playerChoice;
+  choised.p2 = pcChoosing(playerChoice);
 
-  console.log(RULES[playerChoice].win.includes(choises.p2));
+  // const isPlayerWin = RULES[playerChoice].win.includes(choised.p2);
+
+  container.innerHTML = resultMarkup({ icons, choised });
+  container.classList.add("container-result");
 }
 
 function pcChoosing(playerResult) {
-  const pcChoise = icons[Math.floor(Math.random() * icons.length)].class;
+  const pcChoise = iconsKeys[Math.floor(Math.random() * iconsKeys.length)];
 
   if (playerResult === pcChoise) {
     return pcChoosing(playerResult);
