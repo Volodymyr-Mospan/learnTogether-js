@@ -1,3 +1,7 @@
+html {
+  height: 100vh;
+}
+
 h1,
 h2,
 h3,
@@ -20,7 +24,12 @@ img {
 }
 
 body {
-  background: #3b4262;
+  background: radial-gradient(
+    134.34% 134.34% at 50% 0%,
+    #1f3757 0%,
+    #131537 100%
+  );
+
   padding: 32px;
 }
 
@@ -29,6 +38,7 @@ body {
   align-items: center;
   justify-content: space-between;
   padding: 12px 12px 12px 24px;
+  margin-bottom: 64px;
 
   border: 3px solid rgba(255, 255, 255, 0.289199);
   border-radius: 5px;
@@ -64,21 +74,58 @@ body {
 }
 
 .container {
+  display: flex;
+  justify-content: center;
   position: relative;
-  width: 311px;
+  margin-right: auto;
+  margin-left: auto;
+  width: 312px;
   height: 305px;
-  background: rgba(255, 255, 255, 0.05);
-  border: 2px solid #ccc;
+
+  /* border: 1px solid #ccc; */
+  background-image: url(../images/bg-pentagon.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 75%;
 }
 
 .circle {
   position: absolute;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background: orange;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-weight: bold;
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  background: white;
+}
+
+.circle img {
+  width: 40px;
+  height: 40px;
+}
+
+.scissors {
+  border: 10px solid orange;
+  box-shadow: 0 4px 0 #c76c1b;
+}
+.paper {
+  border: 10px solid #29a8ff;
+  box-shadow: 0 4px 0 #2a45c2;
+}
+.rock {
+  border: 10px solid #e74c3c;
+  box-shadow: 0 4px 0 #9d1634;
+}
+.lizard {
+  border: 10px solid #9b59b6;
+  box-shadow: 0 4px 0 #5f37a8;
+}
+.spock {
+  border: 10px solid #3fb7cd;
+  box-shadow: 0 4px 0 #2d8dab;
+}
+
+button {
+  cursor: pointer;
 }
