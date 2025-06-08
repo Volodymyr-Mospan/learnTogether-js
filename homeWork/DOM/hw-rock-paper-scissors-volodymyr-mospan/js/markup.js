@@ -20,7 +20,7 @@ function startMarkup({ icons, cX, cY, R, iconsKeys }) {
   return markup;
 }
 
-function resultMarkup({ icons, choised }) {
+function resultMarkup({ icons, choised, isPlayerWin }) {
   // console.log(choised);
   return `
   <div>
@@ -29,7 +29,13 @@ function resultMarkup({ icons, choised }) {
         data-id="${choised.p1}"
        >
             <img src="${icons[choised.p1].src}" alt="button of ${choised.p1}">
+            ${
+              isPlayerWin
+                ? '<div class="riple "></div><div class="riple riple-1 "></div><div class="riple riple-2 "></div>'
+                : ""
+            }
     </div>
+              
     <p class="description">YOU PICKED</p>
   </div>
   <div>
@@ -38,6 +44,11 @@ function resultMarkup({ icons, choised }) {
         data-id="${choised.p2}"
        >
             <img src="${icons[choised.p2].src}" alt="button of ${choised.p2}">
+            ${
+              isPlayerWin
+                ? ""
+                : '<div class="riple "></div><div class="riple riple-1 "></div><div class="riple riple-2 "></div>'
+            }
     </div>
     <p class="description">THE HOUSE PICKED</p>
   </div>

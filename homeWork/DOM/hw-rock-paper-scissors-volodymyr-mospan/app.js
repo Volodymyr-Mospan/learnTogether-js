@@ -28,17 +28,19 @@ function onClick(e) {
 
   const isPlayerWin = RULES[playerChoice].win.includes(choised.p2);
 
-  if (isPlayerWin) {
-    scoreNumber += 1;
-    counter.textContent = scoreNumber;
-  }
-
-  container.innerHTML = resultMarkup({ icons, choised });
+  container.innerHTML = resultMarkup({ icons, choised, isPlayerWin });
   container.classList.add("container-result");
-  controlContainer.innerHTML = controlMarkup(isPlayerWin);
 
-  const btnPlayAgain = document.querySelector(".js-play-again");
-  btnPlayAgain.addEventListener("click", handlePlayAgain);
+  setTimeout(() => {
+    if (isPlayerWin) {
+      scoreNumber += 1;
+      counter.textContent = scoreNumber;
+    }
+
+    controlContainer.innerHTML = controlMarkup(isPlayerWin);
+    const btnPlayAgain = document.querySelector(".js-play-again");
+    btnPlayAgain.addEventListener("click", handlePlayAgain);
+  }, 1000);
 }
 
 function pcChoosing(playerResult) {
