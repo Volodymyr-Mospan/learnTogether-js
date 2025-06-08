@@ -44,9 +44,11 @@ function resultMarkup({ icons, choised }) {
     `;
 }
 
-function controlMarkup() {
+function controlMarkup(isPlayerWin) {
   return `
-    <p class="js-text-result text-result">YOU WIN</p>
+    <p class="js-text-result text-result">${
+      isPlayerWin ? "YOU WIN" : "YOU LOSE"
+    }</p>
       <button type="button" class="js-play-again btn-play-again">
         PLAY AGAIN
       </button>

@@ -1,5 +1,6 @@
 const container = document.querySelector(".js-container");
 const controlContainer = document.querySelector(".js-control-container");
+const counter = document.querySelector(".score-number");
 
 const icons = {
   scissors: { src: "./images/icon-scissors.svg" },
@@ -16,4 +17,4 @@ const cX = width / 2;
 const cY = cX;
 const R = width / 2 - 48;
 
-export { icons, iconsKeys, cX, cY, R, container, controlContainer };
+export { icons, iconsKeys, cX, cY, R, container, controlContainer, counter };
