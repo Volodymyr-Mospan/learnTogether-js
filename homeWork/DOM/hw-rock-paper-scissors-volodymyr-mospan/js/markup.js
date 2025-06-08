@@ -21,29 +21,36 @@ function startMarkup({ icons, cX, cY, R, iconsKeys }) {
 }
 
 function resultMarkup({ icons, choised }) {
-  console.log(choised);
-  const markup = `
+  // console.log(choised);
+  return `
   <div>
-    <button type="button"
+    <div
         class="circle ${choised.p1}-result circle-result"
         data-id="${choised.p1}"
        >
             <img src="${icons[choised.p1].src}" alt="button of ${choised.p1}">
-    </button>
+    </div>
     <p class="description">YOU PICKED</p>
   </div>
   <div>
-    <button type="button"
+    <div
         class="circle ${choised.p2}-result circle-result"
         data-id="${choised.p2}"
        >
             <img src="${icons[choised.p2].src}" alt="button of ${choised.p2}">
-    </button>
+    </div>
     <p class="description">THE HOUSE PICKED</p>
   </div>
     `;
-
-  return markup;
 }
 
-export { startMarkup, resultMarkup };
+function controlMarkup() {
+  return `
+    <p class="js-text-result text-result">YOU WIN</p>
+      <button type="button" class="js-play-again btn-play-again">
+        PLAY AGAIN
+      </button>
+        `;
+}
+
+export { startMarkup, resultMarkup, controlMarkup };

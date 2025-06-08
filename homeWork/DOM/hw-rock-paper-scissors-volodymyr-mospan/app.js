@@ -1,6 +1,14 @@
 import { RULES } from "./js/rules.js";
-import { icons, iconsKeys, cX, cY, R, container } from "./js/variables.js";
-import { startMarkup, resultMarkup } from "./js/markup.js";
+import {
+  icons,
+  iconsKeys,
+  cX,
+  cY,
+  R,
+  container,
+  controlContainer,
+} from "./js/variables.js";
+import { startMarkup, resultMarkup, controlMarkup } from "./js/markup.js";
 
 const choised = { p1: "", p2: "" };
 
@@ -20,6 +28,7 @@ function onClick(e) {
 
   container.innerHTML = resultMarkup({ icons, choised });
   container.classList.add("container-result");
+  controlContainer.innerHTML = controlMarkup();
 }
 
 function pcChoosing(playerResult) {

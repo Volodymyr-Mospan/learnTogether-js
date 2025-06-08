@@ -1,4 +1,5 @@
 const container = document.querySelector(".js-container");
+const controlContainer = document.querySelector(".js-control-container");
 
 const icons = {
   scissors: { src: "./images/icon-scissors.svg" },
@@ -15,4 +16,4 @@ const cX = width / 2;
 const cY = cX;
 const R = width / 2 - 48;
 
-export { icons, iconsKeys, cX, cY, R, container };
+export { icons, iconsKeys, cX, cY, R, container, controlContainer };
