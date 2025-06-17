@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>Відстежити посилку</h2>
+    <form id="track-form">
+      <input type="text" id="ttn" placeholder="Вкажіть номер ТТН" required />
+      <button type="submit">Відстежити</button>
+    </form>
+
+    <div id="result" style="margin-top: 100px"></div>
+
+    <script>
+      const API_KEY = "60a8875ff8089a00615abb0c69a1c37c";
+
+      document.getElementById("track-form").addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        const ttn = document.getElementById("ttn").value.trim();
+        const resultDiv = document.getElementById("result");
+        resultDiv.textContent = "Запит в обробці...";
+
+        fetch("https://api.novaposhta.ua/v2.0/json/", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            apiKey: API_KEY,
+            modelName: "TrackingDocumentGeneral",
+            calledMethod: "getStatusDocuments",
+            methodProperties: {
+              Documents: [
+                {
+                  DocumentNumber: ttn,
+                },
+              ],
+            },
+          }),
+        })
+          .then((response) => {
+            if (!response.ok) {
+              throw new Error("Помилка HTTP");
+            }
+
+            return response.json();
+          })
+          .then((dataFromNP) => {
+            if (dataFromNP.success && dataFromNP.data.length > 0) {
+              console.log(dataFromNP.data[0]);
+              const info = dataFromNP.data[0];
+
+              resultDiv.innerHTML = `
+                <p>ТТН: <strong>${info.Number}</strong></p>
+                <p>Статус: ${info.Status}</p>
+                <p>Отримувач: ${info.RecipientFullName}</p>
+                <p>Відділення: ${info.WarehouseRecipient}</p>
+                <p>Дата Доставки: ${info.ScheduledDeliveryDate}</p>
+              `;
+            } else {
+              resultDiv.textContent =
+                "Посилку не знайдено або некоректний номер";
+            }
+          })
+          .catch((error)=>{
+             resultDiv.textContent =
+                "Помилка під час запиту" + error.message;
+          })
+      });
+    </script>
+  </body>
+</html>
