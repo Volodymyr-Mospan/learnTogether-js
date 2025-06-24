@@ -65,27 +65,30 @@ body {
 
 /* Галерея */
 .gallery {
-  max-width: 1200px;
   margin: 0 auto;
 }
 
-/* Masonry-картка */
+/* 4 колонки + 3 відступи по 40px = 4 * card + 3 * 40px = 100% */
+.grid-sizer,
 .card {
-  position: relative;
-  margin-bottom: 24px;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
-  background: #fff;
+  width: calc((100% - 3 * 40px) / 4); /* Рівно 4 колонки + 40px між ними */
+  float: left;
+  margin-bottom: 40px;
 }
 
-/* Зображення — будь-якого розміру */
+.card {
+  position: relative;
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* Зображення */
 .card img {
   width: 100%;
-  height: auto;
   display: block;
+  height: auto;
   object-fit: cover;
-  vertical-align: bottom;
 }
 
 /* Підпис */
@@ -94,19 +97,19 @@ body {
   bottom: 0;
   left: 0;
   right: 0;
-  padding: 16px;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0));
+  padding: 32px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
   color: white;
 }
 
 .pic-name {
-  font-size: 1rem;
   margin: 0;
+  font-size: 1rem;
   font-weight: bold;
 }
 
 .pic-author {
-  font-size: 0.85rem;
   margin: 0.25rem 0 0 0;
+  font-size: 0.85rem;
   color: #ccc;
 }

@@ -1,8 +1,8 @@
 document.addEventListener("DOMContentLoaded", function () {
   new Masonry(".gallery", {
     itemSelector: ".card",
-    columnWidth: ".card",
-    gutter: 24,
+    columnWidth: ".grid-sizer",
+    gutter: 40,
     percentPosition: true,
   });
 });
