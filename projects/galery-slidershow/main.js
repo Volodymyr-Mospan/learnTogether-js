@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
     itemSelector: ".card",
     columnWidth: ".grid-sizer",
     gutter: 40,
-    percentPosition: true,
+    // percentPosition: true,
+    // horizontalOrder: true,
   });
 });

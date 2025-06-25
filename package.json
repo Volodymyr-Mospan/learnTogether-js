@@ -1,0 +1,22 @@
+{
+  "name": "learntogether",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Volodymyr-Mospan/learnTogether-js.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Volodymyr-Mospan/learnTogether-js/issues"
+  },
+  "homepage": "https://github.com/Volodymyr-Mospan/learnTogether-js#readme",
+  "dependencies": {
+    "masonry-layout": "^4.2.2"
+  }
+}
