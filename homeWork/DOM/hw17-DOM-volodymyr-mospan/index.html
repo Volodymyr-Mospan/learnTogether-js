@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+
+    <title>Mortgage repayment calculator</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/3.0.1/modern-normalize.min.css"
+      integrity="sha512-q6WgHqiHlKyOqslT/lgBgodhd03Wp4BEqKeW6nNtlOY4quzyG3VoQKFrieaCeSnuVseNKRGpGeDU3qPmabCANg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./style/style.css" />
+  </head>
+  <body>
+    <main class="main">
+      <form class="form">
+        <h1>Mortgage Calculator</h1>
+        <button type="button">Clear All</button>
+        <label for="mount"
+          >Mortgage Amount
+          <input type="number" name="mount" id="mount" />
+        </label>
+        <label for="mount"
+          >Mortgage Term
+          <input type="number" name="term" id="term" />
+        </label>
+        <label for="mount"
+          >Interest Rate
+          <input type="number" name="rate" id="rate" />
+        </label>
+
+        <label for="">Mortgage Type</label>
+        <input type="radio" name="type" id="repayment" />
+        <input type="radio" name="type" id="interest" />
+
+        <button type="submit">
+          <img
+            src="./assets/images/icon-calculator.svg"
+            alt="icon of calculator"
+          />Calculate Repayments
+        </button>
+      </form>
+      <div class="result-desk"></div>
+    </main>
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
+      Coded by <a href="#">Volodymyr Mospan</a>.
+    </div>
+  </body>
+</html>

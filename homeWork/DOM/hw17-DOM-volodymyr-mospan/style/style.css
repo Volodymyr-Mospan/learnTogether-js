@@ -1,0 +1,53 @@
+@font-face {
+  font-family: "Plus Jakarta Sans";
+  src: url("assets/fonts/PlusJakartaSans-VariableFont_wght.ttf")
+    format("truetype");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Plus Jakarta Sans";
+  src: url("assets/fonts/PlusJakartaSans-Italic-VariableFont_wght.ttf")
+    format("truetype");
+  font-weight: 100 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+:root {
+  --color-accent: #d8db2f;
+  --color-bg: #e4f4fd;
+  --color-bg-main: #ffffff;
+  --color-text-main: #133041;
+  --color-text-lable: #4e6e7e;
+  --color-text-description: #9abed5;
+  --color-border: #4e6e7e;
+}
+
+body {
+  background-color: var(--color-bg);
+}
+
+.main {
+  background-color: var(--color-bg-main);
+}
+
+/* Mortgage Calculator Clear All Mortgage Amount Mortgage Term Interest Rate
+    Mortgage Type Repayment Interest Only Calculate Repayments
+
+    <!-- Empty results start -->
+
+    Results shown here Complete the form and click “calculatssse repayments” to see
+    what your monthly repayments would be.
+
+    <!-- Empty results end -->
+
+    <!-- Completed results start -->
+
+    Your results Your results are shown below based on the information you
+    provided. To adjust the results, edit the form and click “calculate
+    repayments” again. Your monthly repayments Total you'll repay over the term
+
+    <!-- Completed results end --> */
