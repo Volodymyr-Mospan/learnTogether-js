@@ -1,6 +1,6 @@
 @font-face {
   font-family: "Plus Jakarta Sans";
-  src: url("assets/fonts/PlusJakartaSans-VariableFont_wght.ttf")
+  src: url("../assets/fonts/PlusJakartaSans-VariableFont_wght.ttf")
     format("truetype");
   font-weight: 100 900;
   font-style: normal;
@@ -9,7 +9,7 @@
 
 @font-face {
   font-family: "Plus Jakarta Sans";
-  src: url("assets/fonts/PlusJakartaSans-Italic-VariableFont_wght.ttf")
+  src: url("../assets/fonts/PlusJakartaSans-Italic-VariableFont_wght.ttf")
     format("truetype");
   font-weight: 100 900;
   font-style: italic;
@@ -23,17 +23,218 @@
   --color-text-main: #133041;
   --color-text-lable: #4e6e7e;
   --color-text-description: #9abed5;
-  --color-border: #4e6e7e;
+  --color-border: #6b94a8;
 }
 
 body {
+  /* position: relative; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100svh;
+  font-family: "Plus Jakarta Sans";
+  font-style: normal;
   background-color: var(--color-bg);
 }
 
+h1,
+h2,
+h3,
+h4,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+button {
+  border: none;
+  background-color: inherit;
+  cursor: pointer;
+}
+
 .main {
+  display: flex;
+  width: 1008px;
+  margin-left: auto;
+  margin-right: auto;
+
+  border-radius: 24px;
+  overflow: hidden;
+
   background-color: var(--color-bg-main);
 }
 
+.form,
+.result-desk {
+  flex: 1;
+}
+
+.form {
+  padding: 40px;
+}
+.form-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  margin-bottom: 40px;
+}
+.form-title {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 125%;
+  color: var(--color-text-main);
+}
+.reset-btn {
+  font-family: "Plus Jakarta Sans";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  text-decoration-line: underline;
+  color: var(--color-text-lable);
+}
+.form-lable {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 12px;
+
+  font-family: "Plus Jakarta Sans";
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  color: var(--color-text-lable);
+}
+.form-simbol-box {
+  position: relative;
+  border-radius: 4px;
+  overflow: hidden;
+}
+.form-input {
+  position: relative;
+  padding: 12px 16px;
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  width: 100%;
+  z-index: 2;
+  background-color: transparent;
+
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 125%;
+  color: var(--color-text-main);
+  &.padding-left {
+    padding-left: 60px;
+  }
+  &.padding-right-96 {
+    padding-right: 96px;
+  }
+  &.padding-right-60 {
+    padding-right: 60px;
+  }
+}
+.input-simbol {
+  position: absolute;
+  top: 1px;
+  padding: 12px 16px;
+  background-color: var(--color-bg);
+  z-index: 1;
+
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 125%;
+  color: var(--color-text-lable);
+}
+.left-simbol {
+  left: 1px;
+}
+.right-simbol {
+  right: 1px;
+}
+.label-wrapper {
+  display: flex;
+  flex-direction: row;
+  column-gap: 24px;
+  margin-bottom: 24px;
+}
+
+.radio-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.radio-box {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 12px 16px;
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  width: 100%;
+
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 125%;
+  color: var(--color-text-main);
+}
+.form-radio {
+  min-height: 48px;
+}
+.checkbox {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+}
+.radio-box input:checked + .checkbox::after {
+  content: "";
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background-color: var(--color-accent);
+}
+.radio-box input:checked + .checkbox {
+  border-color: var(--color-accent);
+}
+.radio-box:has(input:checked) {
+  border-color: var(--color-accent);
+  background: rgba(216, 219, 47, 0.15);
+}
+
+.radio-box:has(input:focus) {
+  box-shadow: 0 0 2px 2px var(--color-accent);
+}
+
+.result-desk {
+  border-radius: 0px 0px 0px 80px;
+
+  background-color: var(--color-text-main);
+}
+
+/* .visually-hidden {
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  margin: -1px;
+} */
 /* Mortgage Calculator Clear All Mortgage Amount Mortgage Term Interest Rate
     Mortgage Type Repayment Interest Only Calculate Repayments
 

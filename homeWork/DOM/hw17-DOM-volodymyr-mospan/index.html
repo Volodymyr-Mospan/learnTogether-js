@@ -26,24 +26,78 @@
   <body>
     <main class="main">
       <form class="form">
-        <h1>Mortgage Calculator</h1>
-        <button type="button">Clear All</button>
-        <label for="mount"
-          >Mortgage Amount
-          <input type="number" name="mount" id="mount" />
-        </label>
-        <label for="mount"
-          >Mortgage Term
-          <input type="number" name="term" id="term" />
-        </label>
-        <label for="mount"
-          >Interest Rate
-          <input type="number" name="rate" id="rate" />
-        </label>
+        <div class="form-header">
+          <h1 class="form-title">Mortgage Calculator</h1>
+          <button class="reset-btn" type="button">Clear All</button>
+        </div>
 
-        <label for="">Mortgage Type</label>
-        <input type="radio" name="type" id="repayment" />
-        <input type="radio" name="type" id="interest" />
+        <div class="label-wrapper">
+          <label class="form-lable" for="mount"
+            >Mortgage Amount
+            <div class="form-simbol-box">
+              <input
+                class="form-input padding-left"
+                type="number"
+                name="mount"
+                id="mount"
+              />
+              <p class="input-simbol left-simbol">£</p>
+            </div>
+          </label>
+        </div>
+
+        <div class="label-wrapper">
+          <label class="form-lable" for="term"
+            >Mortgage Term
+            <div class="form-simbol-box">
+              <input
+                class="form-input padding-right-96"
+                type="number"
+                name="term"
+                id="term"
+                max="99"
+              />
+              <p class="input-simbol right-simbol">years</p>
+            </div>
+          </label>
+          <label class="form-lable" for="rate"
+            >Interest Rate
+            <div class="form-simbol-box">
+              <input
+                class="form-input padding-right-60"
+                type="number"
+                name="rate"
+                id="rate"
+                max="99"
+              />
+              <p class="input-simbol right-simbol">%</p>
+            </div>
+          </label>
+        </div>
+
+        <div class="radio-wrapper">
+          <label class="form-lable" for="">Mortgage Type</label>
+          <label class="radio-box">
+            <input
+              class="form-radio visually-hidden"
+              type="radio"
+              name="type"
+              id="repayment"
+            />
+            <span class="checkbox"></span>
+            <p>Repayment</p>
+          </label>
+          <label class="radio-box">
+            <input
+              class="form-radio visually-hidden"
+              type="radio"
+              name="type"
+              id="interest"
+            />
+            <span class="checkbox"></span>
+            <p>Interest Only</p>
+          </label>
+        </div>
 
         <button type="submit">
           <img
