@@ -35,6 +35,7 @@ body {
   min-height: 100svh;
   font-family: "Plus Jakarta Sans";
   font-style: normal;
+  line-height: 125%;
   background-color: var(--color-bg);
 }
 
@@ -83,7 +84,6 @@ button {
 .form-title {
   font-weight: 700;
   font-size: 24px;
-  line-height: 125%;
   color: var(--color-text-main);
 }
 .reset-btn {
@@ -123,7 +123,6 @@ button {
 
   font-weight: 700;
   font-size: 18px;
-  line-height: 125%;
   color: var(--color-text-main);
   &.padding-left {
     padding-left: 60px;
@@ -144,7 +143,6 @@ button {
 
   font-weight: 700;
   font-size: 18px;
-  line-height: 125%;
   color: var(--color-text-lable);
 }
 .left-simbol {
@@ -164,6 +162,7 @@ button {
   display: flex;
   flex-direction: column;
   gap: 12px;
+  margin-bottom: 40px;
 }
 .radio-box {
   display: flex;
@@ -176,7 +175,6 @@ button {
 
   font-weight: 700;
   font-size: 18px;
-  line-height: 125%;
   color: var(--color-text-main);
 }
 .form-radio {
@@ -194,7 +192,7 @@ button {
   border: 1px solid var(--color-border);
   border-radius: 10px;
 }
-.radio-box input:checked + .checkbox::after {
+.radio-box .form-radio:checked + .checkbox::after {
   content: "";
   width: 10px;
   height: 10px;
@@ -205,25 +203,62 @@ button {
   border-radius: 50%;
   background-color: var(--color-accent);
 }
-.radio-box input:checked + .checkbox {
+.radio-box .form-radio:checked + .checkbox {
   border-color: var(--color-accent);
 }
-.radio-box:has(input:checked) {
+.radio-box:has(.form-radio:checked) {
   border-color: var(--color-accent);
   background: rgba(216, 219, 47, 0.15);
 }
-
-.radio-box:has(input:focus) {
+.radio-box:has(.form-radio:focus) {
   box-shadow: 0 0 2px 2px var(--color-accent);
 }
 
-.result-desk {
-  border-radius: 0px 0px 0px 80px;
+.calculate-btn {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 16px 40px;
+  gap: 12px;
+  background: var(--color-accent);
+  border-radius: 28px;
 
-  background-color: var(--color-text-main);
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--color-text-main);
 }
 
-/* .visually-hidden {
+.result-desk {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 40px;
+  gap: 16px;
+  border-radius: 0px 0px 0px 80px;
+  background-color: var(--color-text-main);
+  text-align: center;
+  color: var(--color-text-description);
+}
+.calculated {
+  justify-content: start;
+}
+.result-title {
+  font-weight: 700;
+  font-size: 24px;
+  color: var(--color-bg-main);
+}
+.result-desk.empty > .result-title::before {
+  display: block;
+  content: "";
+  width: 192px;
+  height: 192px;
+  margin-left: auto;
+  margin-right: auto;
+  background-image: url(../assets/images/illustration-empty.svg);
+}
+
+.visually-hidden {
   position: absolute;
   white-space: nowrap;
   width: 1px;
@@ -234,7 +269,7 @@ button {
   clip: rect(0 0 0 0);
   clip-path: inset(50%);
   margin: -1px;
-} */
+}
 /* Mortgage Calculator Clear All Mortgage Amount Mortgage Term Interest Rate
     Mortgage Type Repayment Interest Only Calculate Repayments
 
