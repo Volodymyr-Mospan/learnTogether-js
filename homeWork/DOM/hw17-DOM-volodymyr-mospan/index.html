@@ -55,6 +55,7 @@
                 type="number"
                 name="term"
                 id="term"
+                min="0"
                 max="99"
               />
               <p class="input-simbol right-simbol">years</p>
@@ -69,6 +70,7 @@
                 name="rate"
                 id="rate"
                 max="99"
+                step="0.05"
               />
               <p class="input-simbol right-simbol">%</p>
             </div>
@@ -106,12 +108,23 @@
           />Calculate Repayments
         </button>
       </form>
+
       <div class="result-desk empty">
         <h2 class="result-title">Results shown here</h2>
         <p class="result-description">
           Complete the form and click “calculate repayments” to see what your
           monthly repayments would be.
         </p>
+        <div class="repayments-table">
+          <div class="repay-box">
+            <h3 class="result-subtitle">Your monthly repayments</h3>
+            <p class="monthly-repayments">£1,797.74</p>
+          </div>
+          <div class="repay-box">
+            <h3 class="result-subtitle">Total you'll repay over the term</h3>
+            <p class="repay-over-term">£539,322.94</p>
+          </div>
+        </div>
       </div>
     </main>
     <div class="attribution">
