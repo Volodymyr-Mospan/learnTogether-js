@@ -32,14 +32,15 @@
         </div>
 
         <div class="label-wrapper">
-          <label class="form-lable" for="mount"
+          <label class="form-lable" for="amount"
             >Mortgage Amount
             <div class="form-simbol-box">
               <input
                 class="form-input padding-left"
                 type="number"
-                name="mount"
-                id="mount"
+                name="amount"
+                id="amount"
+                required
               />
               <p class="input-simbol left-simbol">£</p>
             </div>
@@ -56,7 +57,7 @@
                 name="term"
                 id="term"
                 min="0"
-                max="99"
+                required
               />
               <p class="input-simbol right-simbol">years</p>
             </div>
@@ -69,8 +70,8 @@
                 type="number"
                 name="rate"
                 id="rate"
-                max="99"
                 step="0.05"
+                required
               />
               <p class="input-simbol right-simbol">%</p>
             </div>
@@ -83,8 +84,10 @@
             <input
               class="form-radio visually-hidden"
               type="radio"
-              name="type"
+              name="mortgageType"
               id="repayment"
+              value="repayment"
+              required
             />
             <span class="checkbox"></span>
             <p>Repayment</p>
@@ -93,8 +96,10 @@
             <input
               class="form-radio visually-hidden"
               type="radio"
-              name="type"
-              id="interest"
+              name="mortgageType"
+              id="interest-only"
+              value="interest-only"
+              required
             />
             <span class="checkbox"></span>
             <p>Interest Only</p>
@@ -132,5 +137,6 @@
       <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
       Coded by <a href="#">Volodymyr Mospan</a>.
     </div>
+    <script type="module" src="./script.js"></script>
   </body>
 </html>
