@@ -132,3 +132,6 @@ dist
 # Store of mac
 .DS_Store
 lessons/core/lesson-14-object-1-hwcheck/hw/tech-book-club-landing
+
+# Archiv
+.zip
