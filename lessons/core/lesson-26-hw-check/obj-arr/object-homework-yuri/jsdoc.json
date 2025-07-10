@@ -1,0 +1,10 @@
+{
+    "source": {
+        "include": ["main.js"],
+        "includePattern": ".+\\.js$",
+        "exclude": ["node_modules"]
+    },
+    "opts": {
+        "destination": "./docs"
+    }
+}
