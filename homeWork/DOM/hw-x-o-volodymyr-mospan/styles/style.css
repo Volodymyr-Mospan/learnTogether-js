@@ -1,22 +1,109 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  padding: 32px;
+
+  background: linear-gradient(145deg, #1b2a49, #0d1224);
+  color: #fff;
+  min-height: 100vh;
+
+  font-family: "Barlow Semi Condensed";
+
+  font-weight: 700;
+  font-size: 15px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 12px 12px 24px;
+  margin-bottom: 64px;
+
+  border: 3px solid rgba(255, 255, 255, 0.289199);
+  border-radius: 5px;
+}
+
+.counter {
+  padding: 10px 16px;
+
+  background: linear-gradient(0deg, #f3f3f3 0%, #ffffff 100%);
+  box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.196706);
+  border-radius: 4px;
+}
+
+.score {
+  font-family: "Barlow Semi Condensed";
+  font-weight: 600;
+  font-size: 10px;
+  line-height: 12px;
+  text-align: center;
+  letter-spacing: 1.5625px;
+
+  color: #2a45c2;
+}
+
+.score-number {
+  font-family: "Barlow Semi Condensed";
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 40px;
+  text-align: center;
+
+  color: #565468;
+}
+
 .box {
   display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 400px;
+  max-width: 90vw;
+  margin-left: auto;
+  margin-right: auto;
 
-  margin: 50px 50px 50px 50px;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
 }
 
 .content {
-  width: 270px;
-  margin: 0 auto;
-  border: solid, 2px, red;
+  width: 360px; /* фіксовані 3 комірки по 120 px */
+  max-width: 90vw;
+  aspect-ratio: 1 / 1;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 16px;
+  background-color: rgba(255, 255, 255, 0.02);
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.4);
+  position: relative;
 }
 
 .item {
-  display: inline-block;
-  width: 88px;
-  height: 88px;
-  border: solid, 1px, rgb(4, 255, 0);
+  width: 100%;
+  height: 100%;
+  background-color: #223a5f;
+  border-radius: 50%; /* з закругленням */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #fff;
+  cursor: pointer;
+  border: 6px solid #364f75;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  transition: all 0.2s ease;
+}
 
-  font-size: 70px;
-  text-align: center;
-  vertical-align: middle;
+.item:hover {
+  background-color: #2a4b78;
+  transform: scale(1.06);
 }

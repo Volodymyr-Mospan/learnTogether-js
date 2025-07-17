@@ -16,32 +16,29 @@ let playerSteps = {
   p1: [],
   p2: [],
 };
+let stepCounter = 0;
 
 newGame(content);
 
 content.addEventListener("click", onClick);
 
-function onClick(e) {
+async function onClick(e) {
+  console.log("start P1");
+  const allElements = e.currentTarget.children;
   const elem = e.target;
-  if (elem.textContent) {
-    return;
-  }
+  if (elem.textContent) return;
+
   elem.textContent = PLAYER[currentPlayer];
   playerSteps[currentPlayer].push(Number(elem.dataset.id));
 
-  const isWiner = WIN_COMBINATIONS.some((combination) => {
-    return combination.every((el) => {
-      return playerSteps[currentPlayer].includes(el);
-    });
-  });
+  await delay(200);
+  if (checkWinner(currentPlayer)) return;
+  if (checkStepCounter()) return;
+  changePlayer();
 
-  if (isWiner) {
-    alert(`${currentPlayer} is WINER`);
-    newGame(content);
-    return;
-  }
-
-  currentPlayer = currentPlayer === "p1" ? "p2" : "p1";
+  content.removeEventListener("click", onClick);
+  await delay(500);
+  if (stepCounter < 9) ai(allElements);
 }
 
 function newGame(vraper) {
@@ -56,6 +53,56 @@ function newGame(vraper) {
     p1: [],
     p2: [],
   };
+  stepCounter = 0;
 }
 
-function ai() {}
+function checkWinner(currentPlayer) {
+  const isWinner = WIN_COMBINATIONS.some((combination) => {
+    return combination.every((el) => {
+      return playerSteps[currentPlayer].includes(el);
+    });
+  });
+
+  if (isWinner) {
+    alert(`${currentPlayer} is WINER`);
+    newGame(content);
+  }
+  return isWinner;
+}
+
+function checkStepCounter() {
+  stepCounter += 1;
+  if (stepCounter === 9) {
+    alert(`Nobody wins ;)`);
+    newGame(content);
+    return true;
+  }
+}
+
+function changePlayer() {
+  currentPlayer = currentPlayer === "p1" ? "p2" : "p1";
+}
+
+async function ai(allElements) {
+  const position = Math.floor(Math.random() * 9);
+  const elem = allElements[position];
+
+  if (elem.textContent) {
+    return ai(allElements);
+  }
+  content.addEventListener("click", onClick);
+
+  console.log("start AI");
+
+  elem.textContent = PLAYER[currentPlayer];
+  playerSteps[currentPlayer].push(Number(elem.dataset.id));
+
+  await delay(100);
+  if (checkWinner(currentPlayer)) return;
+  if (checkStepCounter()) return;
+  changePlayer();
+}
+
+function delay(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
